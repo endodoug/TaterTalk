@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B7325A5B1C9B66FA002BC406 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7325A5A1C9B66FA002BC406 /* AppDelegate.swift */; };
-		B7325A5D1C9B66FA002BC406 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7325A5C1C9B66FA002BC406 /* ViewController.swift */; };
+		B7325A5D1C9B66FA002BC406 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7325A5C1C9B66FA002BC406 /* ChatViewController.swift */; };
 		B7325A601C9B66FA002BC406 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7325A5E1C9B66FA002BC406 /* Main.storyboard */; };
 		B7325A621C9B66FA002BC406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7325A611C9B66FA002BC406 /* Assets.xcassets */; };
 		B7325A651C9B66FA002BC406 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7325A631C9B66FA002BC406 /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		B7325A571C9B66FA002BC406 /* TaterTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaterTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7325A5A1C9B66FA002BC406 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B7325A5C1C9B66FA002BC406 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B7325A5C1C9B66FA002BC406 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		B7325A5F1C9B66FA002BC406 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B7325A611C9B66FA002BC406 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7325A641C9B66FA002BC406 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				B7325A5A1C9B66FA002BC406 /* AppDelegate.swift */,
-				B7325A5C1C9B66FA002BC406 /* ViewController.swift */,
+				B7325A5C1C9B66FA002BC406 /* ChatViewController.swift */,
 				B7325A5E1C9B66FA002BC406 /* Main.storyboard */,
 				B7325A611C9B66FA002BC406 /* Assets.xcassets */,
 				B7325A631C9B66FA002BC406 /* LaunchScreen.storyboard */,
@@ -135,7 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7325A5D1C9B66FA002BC406 /* ViewController.swift in Sources */,
+				B7325A5D1C9B66FA002BC406 /* ChatViewController.swift in Sources */,
 				B7325A5B1C9B66FA002BC406 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
