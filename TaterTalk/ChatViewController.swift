@@ -11,15 +11,35 @@ import UIKit
 class ChatViewController: UIViewController {
     
     private let tableView = UITableView()
+    
+    private var messages = [Message]()
+    private let cellIdentifier = "Cell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        
         // Do any additional setup after loading the view, typically from a nib.
         
+        for i in 0...10 {           // loop thru 10x
+            let m = Message()       // m = an instance of Message
+            m.text = String(i)      // m.text = i(count increment) as a string
+            messages.append(m)      // add m to messages array
+        }
+        
+        for eachMessage in messages {
+            print(eachMessage, ":", eachMessage.text)
+        }
+        
+        // set up cell reuse
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        
+        // start AutoLayout
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         
-        //: set up array of autolayout constraints for our tableView
+        // set up array of autolayout constraints for our tableView
         let tableViewConstraints: [NSLayoutConstraint] = [
             tableView.topAnchor.constraintEqualToAnchor(view.topAnchor),
             tableView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor),
@@ -39,4 +59,32 @@ class ChatViewController: UIViewController {
 
 
 }
+
+
+
+extension ChatViewController: UITableViewDataSource {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
+        let message = messages[indexPath.row]
+        cell.textLabel?.text = message.text
+        return cell
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
