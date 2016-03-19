@@ -14,6 +14,7 @@ class ChatViewController: UIViewController {
     
     private var messages = [Message]()
     private let cellIdentifier = "Cell"
+    private let newMessageField = UITextView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,40 @@ class ChatViewController: UIViewController {
             print(eachMessage, ":", eachMessage.text)
         }
         
+        // create new message area
+        let newMessageArea = UIView()
+        newMessageArea.backgroundColor = UIColor.lightGrayColor()
+        newMessageArea.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(newMessageArea)
+        
+        newMessageField.translatesAutoresizingMaskIntoConstraints = false
+        newMessageArea.addSubview(newMessageField)
+        
+        newMessageField.scrollEnabled = false
+        
+        let sendButton = UIButton()
+        sendButton.translatesAutoresizingMaskIntoConstraints = false
+        newMessageArea.addSubview(sendButton)
+        
+        sendButton.setTitle("Send", forState: .Normal)
+        
+        sendButton.setContentHuggingPriority(251, forAxis: .Horizontal)
+        
+        let newMessageAreaConstraints: [NSLayoutConstraint] = [
+            newMessageArea.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor),
+            newMessageArea.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor),
+            newMessageArea.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor),
+            newMessageField.leadingAnchor.constraintEqualToAnchor(newMessageArea.leadingAnchor, constant: 10),
+            newMessageField.centerYAnchor.constraintEqualToAnchor(newMessageArea.centerYAnchor),
+            sendButton.trailingAnchor.constraintEqualToAnchor(newMessageArea.trailingAnchor, constant: -10),
+            newMessageField.trailingAnchor.constraintEqualToAnchor(sendButton.leadingAnchor, constant: -10),
+            sendButton.centerYAnchor.constraintEqualToAnchor(newMessageField.centerYAnchor),
+            newMessageArea.heightAnchor.constraintEqualToAnchor(newMessageField.heightAnchor, constant: 20)
+        ]
+        
+        NSLayoutConstraint.activateConstraints(newMessageAreaConstraints)
+        
+        
         // set up cell reuse
         tableView.registerClass(ChatCell.self, forCellReuseIdentifier: cellIdentifier)
         
@@ -53,7 +88,7 @@ class ChatViewController: UIViewController {
         // set up array of autolayout constraints for our tableView
         let tableViewConstraints: [NSLayoutConstraint] = [
             tableView.topAnchor.constraintEqualToAnchor(view.topAnchor),
-            tableView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor),
+            tableView.bottomAnchor.constraintEqualToAnchor(newMessageArea.topAnchor),
             tableView.rightAnchor.constraintEqualToAnchor(view.rightAnchor),
             tableView.leftAnchor.constraintEqualToAnchor(view.leftAnchor)
         ]
