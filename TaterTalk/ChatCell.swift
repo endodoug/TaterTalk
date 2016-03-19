@@ -29,11 +29,11 @@ class ChatCell: UITableViewCell {
         messageLabel.centerXAnchor.constraintEqualToAnchor(bubbleImageView.centerXAnchor).active = true
         messageLabel.centerYAnchor.constraintEqualToAnchor(bubbleImageView.centerYAnchor).active = true
         
-        // speech bubble grows with message
+        // speech bubble grows with message & pads the text
         bubbleImageView.widthAnchor.constraintEqualToAnchor(messageLabel.widthAnchor, constant: 50).active = true
         bubbleImageView.heightAnchor.constraintEqualToAnchor(messageLabel.heightAnchor, constant: 20).active = true
         
-        // speech bubble to right or left side
+        // speech bubble positioning
         outgoingConstraints = [
             bubbleImageView.trailingAnchor.constraintEqualToAnchor(contentView.trailingAnchor),
             bubbleImageView.leadingAnchor.constraintGreaterThanOrEqualToAnchor(contentView.centerXAnchor)

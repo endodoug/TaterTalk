@@ -21,6 +21,7 @@ class ChatViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        //allows the row height to be adjusted dynamically
         tableView.estimatedRowHeight = 44
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -80,7 +81,7 @@ extension ChatViewController: UITableViewDataSource {
         let message = messages[indexPath.row]
         cell.messageLabel.text = message.text
         cell.incoming(message.incoming)
-        // remove cell separator line
+    // remove cell separator line
         cell.separatorInset = UIEdgeInsetsMake(0, tableView.bounds.size.width, 0, 0)
         return cell
     }
