@@ -19,6 +19,9 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        tableView.delegate = self
+        
+        tableView.estimatedRowHeight = 44
         
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -28,7 +31,8 @@ class ChatViewController: UIViewController {
         
         for i in 0...10 {           // loop thru 10x
             let m = Message()       // m = an instance of Message
-            m.text = String(i)      // m.text = i(count increment) as a string
+            //m.text = String(i)      // m.text = i(count increment) as a string
+            m.text = "This is a longer message."
             m.incoming = localIncoming
             localIncoming = !localIncoming
             messages.append(m)      // add m to messages array
@@ -66,8 +70,6 @@ class ChatViewController: UIViewController {
 
 }
 
-
-
 extension ChatViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
@@ -78,7 +80,15 @@ extension ChatViewController: UITableViewDataSource {
         let message = messages[indexPath.row]
         cell.messageLabel.text = message.text
         cell.incoming(message.incoming)
+        // remove cell separator line
+        cell.separatorInset = UIEdgeInsetsMake(0, tableView.bounds.size.width, 0, 0)
         return cell
+    }
+}
+
+extension ChatViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
     }
 }
 

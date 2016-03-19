@@ -13,8 +13,8 @@ class ChatCell: UITableViewCell {
     let messageLabel: UILabel = UILabel()
     private let bubbleImageView = UIImageView()
     
-    private var outgoingConstraint: NSLayoutConstraint!
-    private var incomingConstraint: NSLayoutConstraint!
+    private var outgoingConstraints: [NSLayoutConstraint]!
+    private var incomingConstraints: [NSLayoutConstraint]!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -31,14 +31,21 @@ class ChatCell: UITableViewCell {
         
         // speech bubble grows with message
         bubbleImageView.widthAnchor.constraintEqualToAnchor(messageLabel.widthAnchor, constant: 50).active = true
-        bubbleImageView.heightAnchor.constraintEqualToAnchor(messageLabel.heightAnchor).active = true
+        bubbleImageView.heightAnchor.constraintEqualToAnchor(messageLabel.heightAnchor, constant: 20).active = true
         
         // speech bubble to right or left side
-        bubbleImageView.topAnchor.constraintEqualToAnchor(contentView.topAnchor).active = true
+        outgoingConstraints = [
+            bubbleImageView.trailingAnchor.constraintEqualToAnchor(contentView.trailingAnchor),
+            bubbleImageView.leadingAnchor.constraintGreaterThanOrEqualToAnchor(contentView.centerXAnchor)
+        ]
         
-        // activate these constrainsts inthe income() below
-        outgoingConstraint = bubbleImageView.trailingAnchor.constraintEqualToAnchor(contentView.trailingAnchor)
-        incomingConstraint = bubbleImageView.leadingAnchor.constraintEqualToAnchor(contentView.leadingAnchor)
+        incomingConstraints = [
+            bubbleImageView.leadingAnchor.constraintEqualToAnchor(contentView.leadingAnchor),
+            bubbleImageView.trailingAnchor.constraintLessThanOrEqualToAnchor(contentView.centerXAnchor)
+        ]
+        
+        bubbleImageView.topAnchor.constraintEqualToAnchor(contentView.topAnchor, constant: 10).active = true
+        bubbleImageView.bottomAnchor.constraintEqualToAnchor(contentView.bottomAnchor, constant: -10).active = true
         
         
         // set up message label
@@ -54,13 +61,13 @@ class ChatCell: UITableViewCell {
     // postion the speech bubble by activating constraints
     func incoming(incoming: Bool) {
         if incoming {
-            incomingConstraint.active = true
-            outgoingConstraint.active = false
+            NSLayoutConstraint.deactivateConstraints(outgoingConstraints)
+            NSLayoutConstraint.activateConstraints(incomingConstraints)
             bubbleImageView.image = bubble.incoming
         }
         else {
-            outgoingConstraint.active = true
-            incomingConstraint.active = false
+            NSLayoutConstraint.deactivateConstraints(incomingConstraints)
+            NSLayoutConstraint.activateConstraints(outgoingConstraints)
             bubbleImageView.image = bubble.outgoing
         }
     }
@@ -72,10 +79,13 @@ let bubble = makeBubble()
 func makeBubble() -> (incoming: UIImage, outgoing: UIImage) {
     let image = UIImage(named: "MessageBubble")!
     
-    let outgoing = coloredImage(image, red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
+    let insetsIncoming = UIEdgeInsets(top: 17, left: 26.5, bottom: 17.5, right: 21)
+    let insetsOutgoing = UIEdgeInsets(top: 17, left: 21, bottom: 17.5, right: 26.5)
+    
+    let outgoing = coloredImage(image, red: 0/255, green: 122/255, blue: 255/255, alpha: 1).resizableImageWithCapInsets(insetsOutgoing)
     let flippedImage = UIImage(CGImage: image.CGImage!, scale: image.scale, orientation: UIImageOrientation.UpMirrored)
     
-    let incoming = coloredImage(flippedImage, red: 229/255, green: 229/255, blue: 229/255, alpha: 1)
+    let incoming = coloredImage(flippedImage, red: 229/255, green: 229/255, blue: 229/255, alpha: 1).resizableImageWithCapInsets(insetsIncoming)
     
     return (incoming, outgoing)
 }
