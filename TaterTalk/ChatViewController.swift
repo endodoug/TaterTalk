@@ -22,9 +22,15 @@ class ChatViewController: UIViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
         
+        // set up some fake data
+        
+        var localIncoming = true
+        
         for i in 0...10 {           // loop thru 10x
             let m = Message()       // m = an instance of Message
             m.text = String(i)      // m.text = i(count increment) as a string
+            m.incoming = localIncoming
+            localIncoming = !localIncoming
             messages.append(m)      // add m to messages array
         }
         
@@ -71,6 +77,7 @@ extension ChatViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ChatCell
         let message = messages[indexPath.row]
         cell.messageLabel.text = message.text
+        cell.incoming(message.incoming)
         return cell
     }
 }
