@@ -14,6 +14,7 @@
 		B7325A651C9B66FA002BC406 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7325A631C9B66FA002BC406 /* LaunchScreen.storyboard */; };
 		B7325A6D1C9B9BBE002BC406 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7325A6C1C9B9BBE002BC406 /* Message.swift */; };
 		B7325A6F1C9BAC1A002BC406 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7325A6E1C9BAC1A002BC406 /* ChatCell.swift */; };
+		B7B3A7701C9F8B72008C6C8D /* UITableView+Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B3A76F1C9F8B72008C6C8D /* UITableView+Scroll.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B7325A661C9B66FA002BC406 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7325A6C1C9B9BBE002BC406 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B7325A6E1C9BAC1A002BC406 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		B7B3A76F1C9F8B72008C6C8D /* UITableView+Scroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Scroll.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				B7325A5A1C9B66FA002BC406 /* AppDelegate.swift */,
 				B7325A5C1C9B66FA002BC406 /* ChatViewController.swift */,
+				B7B3A76F1C9F8B72008C6C8D /* UITableView+Scroll.swift */,
 				B7325A6E1C9BAC1A002BC406 /* ChatCell.swift */,
 				B7325A6C1C9B9BBE002BC406 /* Message.swift */,
 				B7325A5E1C9B66FA002BC406 /* Main.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7B3A7701C9F8B72008C6C8D /* UITableView+Scroll.swift in Sources */,
 				B7325A6D1C9B9BBE002BC406 /* Message.swift in Sources */,
 				B7325A6F1C9BAC1A002BC406 /* ChatCell.swift in Sources */,
 				B7325A5D1C9B66FA002BC406 /* ChatViewController.swift in Sources */,
@@ -294,6 +298,7 @@
 				B7325A6B1C9B66FA002BC406 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
