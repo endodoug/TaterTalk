@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+
 
 class ChatViewController: UIViewController {
     
@@ -17,6 +19,8 @@ class ChatViewController: UIViewController {
     private var bottomConstraint: NSLayoutConstraint!
     private let cellIdentifier = "Cell"
     private let newMessageField = UITextView()
+    
+    var context: NSManagedObjectContext?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,31 +31,17 @@ class ChatViewController: UIViewController {
         //allows the row height to be adjusted dynamically
         tableView.estimatedRowHeight = 44
         
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        // set up some fake data
-        
-        var localIncoming = true
-        var date = NSDate(timeIntervalSince1970: 1100000000)
-        
-        for i in 0...10 {           // loop thru 10x
-            let m = Message()       // m = an instance of Message
-            //m.text = String(i)      // m.text = i(count increment) as a string
-            m.text = "This is a longer message."
-            m.timeStamp = date
-            m.incoming = localIncoming
-            localIncoming = !localIncoming
-            addMessage(m)      // add m to messages array
-            
-            // the modulo symbol to determine if the remainder is equal to 0. So every other value of i (odds and evens) will cause the if statement to evaluate to true. We then update the date variable so it will be the next day.
-            if i%2 == 0 {
-                date = NSDate(timeInterval: 60 * 60 * 24, sinceDate: date)
+        do {
+            let request = NSFetchRequest(entityName: "Message")
+            if let result = try context?.executeFetchRequest(request) as? [Message] {
+                for message in result {
+                     addMessage(message)
+                }
             }
         }
-        
-//        for eachMessage in messages {
-//            print(eachMessage, ":", eachMessage.text)
-//        }
+        catch {
+            print("We couldn't fetch!")
+        }
         
         // create new message area
         let newMessageArea = UIView()
@@ -156,11 +146,20 @@ class ChatViewController: UIViewController {
     
     func pressedSend(button: UIButton) {
         guard let text = newMessageField.text where text.characters.count > 0 else { return }
-        let message = Message()
+        guard let context = context else { return }
+        guard let message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: context) as? Message else { return }
         message.text = text
-        message.incoming = false
-        message.timeStamp = NSDate()
+        message.isIncoming = false
+        message.timestamp = NSDate()
         addMessage(message)
+        do {
+           try context.save()
+        }
+        catch {
+            print("There was a problem saving")
+            return
+        }
+        
         newMessageField.text = ""
         tableView.reloadData()
         tableView.scrollToBottom()
@@ -168,7 +167,7 @@ class ChatViewController: UIViewController {
     }
     
     func addMessage (message: Message) {
-        guard let date = message.timeStamp else { return }
+        guard let date = message.timestamp else { return }
         let calendar = NSCalendar.currentCalendar()
         let startDay = calendar.startOfDayForDate(date)
         
@@ -205,7 +204,7 @@ extension ChatViewController: UITableViewDataSource {
         let message = messages[indexPath.row]
         
         cell.messageLabel.text = message.text
-        cell.incoming(message.incoming)
+        cell.incoming(message.isIncoming)
     // remove cell separator line and set background color
         cell.backgroundColor = UIColor.clearColor()
         cell.separatorInset = UIEdgeInsetsMake(0, tableView.bounds.size.width, 0, 0)
