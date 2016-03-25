@@ -12,12 +12,16 @@
 		B7325A601C9B66FA002BC406 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7325A5E1C9B66FA002BC406 /* Main.storyboard */; };
 		B7325A621C9B66FA002BC406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7325A611C9B66FA002BC406 /* Assets.xcassets */; };
 		B7325A651C9B66FA002BC406 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7325A631C9B66FA002BC406 /* LaunchScreen.storyboard */; };
-		B7325A6F1C9BAC1A002BC406 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7325A6E1C9BAC1A002BC406 /* ChatCell.swift */; };
+		B7325A6F1C9BAC1A002BC406 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7325A6E1C9BAC1A002BC406 /* MessageCell.swift */; };
 		B7B3A7701C9F8B72008C6C8D /* UITableView+Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B3A76F1C9F8B72008C6C8D /* UITableView+Scroll.swift */; };
 		B7BABE481CA4DA9300964D3F /* CDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BABE471CA4DA9300964D3F /* CDHelper.swift */; };
 		B7BABE4B1CA4DD0800964D3F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B7BABE491CA4DD0800964D3F /* Model.xcdatamodeld */; };
-		B7BABE4E1CA4DDE400964D3F /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BABE4C1CA4DDE400964D3F /* Message+CoreDataProperties.swift */; };
 		B7BABE4F1CA4DDE400964D3F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BABE4D1CA4DDE400964D3F /* Message.swift */; };
+		B7F159B71CA5C4D20003938C /* Chat+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F159B41CA5C4D20003938C /* Chat+CoreDataProperties.swift */; };
+		B7F159B81CA5C4D20003938C /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F159B51CA5C4D20003938C /* Chat.swift */; };
+		B7F159BA1CA5C5280003938C /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F159B91CA5C5280003938C /* Message+CoreDataProperties.swift */; };
+		B7F159BC1CA5C7450003938C /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F159BB1CA5C7450003938C /* ChatCell.swift */; };
+		B7F159BE1CA5CD120003938C /* AllChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F159BD1CA5CD120003938C /* AllChatsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,12 +32,16 @@
 		B7325A611C9B66FA002BC406 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7325A641C9B66FA002BC406 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7325A661C9B66FA002BC406 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B7325A6E1C9BAC1A002BC406 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		B7325A6E1C9BAC1A002BC406 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		B7B3A76F1C9F8B72008C6C8D /* UITableView+Scroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Scroll.swift"; sourceTree = "<group>"; };
 		B7BABE471CA4DA9300964D3F /* CDHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDHelper.swift; sourceTree = "<group>"; };
 		B7BABE4A1CA4DD0800964D3F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		B7BABE4C1CA4DDE400964D3F /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Message+CoreDataProperties.swift"; path = "../Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		B7BABE4D1CA4DDE400964D3F /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = ../Message.swift; sourceTree = "<group>"; };
+		B7BABE4D1CA4DDE400964D3F /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		B7F159B41CA5C4D20003938C /* Chat+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Chat+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B7F159B51CA5C4D20003938C /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		B7F159B91CA5C5280003938C /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B7F159BB1CA5C7450003938C /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		B7F159BD1CA5CD120003938C /* AllChatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllChatsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +58,10 @@
 		B7325A4E1C9B66FA002BC406 = {
 			isa = PBXGroup;
 			children = (
+				B7F159B91CA5C5280003938C /* Message+CoreDataProperties.swift */,
+				B7F159B41CA5C4D20003938C /* Chat+CoreDataProperties.swift */,
+				B7F159B51CA5C4D20003938C /* Chat.swift */,
+				B7BABE4D1CA4DDE400964D3F /* Message.swift */,
 				B7325A591C9B66FA002BC406 /* TaterTalk */,
 				B7325A581C9B66FA002BC406 /* Products */,
 			);
@@ -67,13 +79,13 @@
 			isa = PBXGroup;
 			children = (
 				B7325A5A1C9B66FA002BC406 /* AppDelegate.swift */,
+				B7F159BD1CA5CD120003938C /* AllChatsViewController.swift */,
 				B7325A5C1C9B66FA002BC406 /* ChatViewController.swift */,
+				B7F159BB1CA5C7450003938C /* ChatCell.swift */,
 				B7B3A76F1C9F8B72008C6C8D /* UITableView+Scroll.swift */,
 				B7BABE471CA4DA9300964D3F /* CDHelper.swift */,
-				B7BABE4C1CA4DDE400964D3F /* Message+CoreDataProperties.swift */,
-				B7BABE4D1CA4DDE400964D3F /* Message.swift */,
 				B7BABE491CA4DD0800964D3F /* Model.xcdatamodeld */,
-				B7325A6E1C9BAC1A002BC406 /* ChatCell.swift */,
+				B7325A6E1C9BAC1A002BC406 /* MessageCell.swift */,
 				B7325A5E1C9B66FA002BC406 /* Main.storyboard */,
 				B7325A611C9B66FA002BC406 /* Assets.xcassets */,
 				B7325A631C9B66FA002BC406 /* LaunchScreen.storyboard */,
@@ -155,11 +167,15 @@
 			files = (
 				B7B3A7701C9F8B72008C6C8D /* UITableView+Scroll.swift in Sources */,
 				B7BABE481CA4DA9300964D3F /* CDHelper.swift in Sources */,
+				B7F159BC1CA5C7450003938C /* ChatCell.swift in Sources */,
 				B7BABE4B1CA4DD0800964D3F /* Model.xcdatamodeld in Sources */,
-				B7325A6F1C9BAC1A002BC406 /* ChatCell.swift in Sources */,
-				B7BABE4E1CA4DDE400964D3F /* Message+CoreDataProperties.swift in Sources */,
+				B7325A6F1C9BAC1A002BC406 /* MessageCell.swift in Sources */,
+				B7F159B81CA5C4D20003938C /* Chat.swift in Sources */,
+				B7F159BE1CA5CD120003938C /* AllChatsViewController.swift in Sources */,
 				B7BABE4F1CA4DDE400964D3F /* Message.swift in Sources */,
+				B7F159B71CA5C4D20003938C /* Chat+CoreDataProperties.swift in Sources */,
 				B7325A5D1C9B66FA002BC406 /* ChatViewController.swift in Sources */,
+				B7F159BA1CA5C5280003938C /* Message+CoreDataProperties.swift in Sources */,
 				B7325A5B1C9B66FA002BC406 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

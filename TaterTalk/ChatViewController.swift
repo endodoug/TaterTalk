@@ -33,10 +33,12 @@ class ChatViewController: UIViewController {
         
         do {
             let request = NSFetchRequest(entityName: "Message")
+            request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
             if let result = try context?.executeFetchRequest(request) as? [Message] {
                 for message in result {
                      addMessage(message)
                 }
+                
             }
         }
         catch {
@@ -81,7 +83,7 @@ class ChatViewController: UIViewController {
         
         
         // set up cell reuse
-        tableView.registerClass(ChatCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView.registerClass(MessageCell.self, forCellReuseIdentifier: cellIdentifier)
         
         // start AutoLayout
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -174,9 +176,11 @@ class ChatViewController: UIViewController {
         var messages = sections[startDay]
         if messages == nil {
             dates.append(startDay)
+            dates = dates.sort({$0.earlierDate($1) == $0})
             messages = [Message]()
         }
-        messages?.append(message)
+        messages!.append(message)
+        messages!.sortInPlace{$0.timestamp!.earlierDate($1.timestamp!) == $0.timestamp!}
         sections[startDay] = messages
     }
     
@@ -199,7 +203,7 @@ extension ChatViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ChatCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MessageCell
         let messages = getMessages(indexPath.section)
         let message = messages[indexPath.row]
         
