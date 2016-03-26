@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let context = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
         context.persistentStoreCoordinator = CDHelper.sharedInstance.coordinator
         vc.context = context
+        fakeData(context)
         
         return true
     }
@@ -52,5 +53,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    func fakeData(context: NSManagedObjectContext) {
+        let dataSeeded = NSUserDefaults.standardUserDefaults().boolForKey("dataSeeded")
+        guard !dataSeeded else { return }
+        
+        let people = [("John", "Nichols"), ("Matt", "Damon")]
+        for person in people {
+            let contact = NSEntityDescription.insertNewObjectForEntityForName("Contact", inManagedObjectContext: context) as! Contact
+            contact.firstName = person.0
+            contact.lastName = person.1
+        }
+        do {
+            try context.save()
+        }
+        catch {
+            print("Error Saving")
+        }
+        NSUserDefaults.standardUserDefaults().setObject(true, forKey: "dataSeeded")
+    }
 }
 

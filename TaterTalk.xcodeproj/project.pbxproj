@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7194E291CA73F2B007D5F27 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7194E271CA73F2B007D5F27 /* Contact+CoreDataProperties.swift */; };
+		B7194E2A1CA73F2B007D5F27 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7194E281CA73F2B007D5F27 /* Contact.swift */; };
 		B7325A5B1C9B66FA002BC406 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7325A5A1C9B66FA002BC406 /* AppDelegate.swift */; };
 		B7325A5D1C9B66FA002BC406 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7325A5C1C9B66FA002BC406 /* ChatViewController.swift */; };
 		B7325A601C9B66FA002BC406 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7325A5E1C9B66FA002BC406 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B7194E271CA73F2B007D5F27 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B7194E281CA73F2B007D5F27 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		B7325A571C9B66FA002BC406 /* TaterTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaterTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7325A5A1C9B66FA002BC406 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7325A5C1C9B66FA002BC406 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +62,8 @@
 		B7325A4E1C9B66FA002BC406 = {
 			isa = PBXGroup;
 			children = (
+				B7194E271CA73F2B007D5F27 /* Contact+CoreDataProperties.swift */,
+				B7194E281CA73F2B007D5F27 /* Contact.swift */,
 				B7F159B91CA5C5280003938C /* Message+CoreDataProperties.swift */,
 				B7F159B41CA5C4D20003938C /* Chat+CoreDataProperties.swift */,
 				B7F159B51CA5C4D20003938C /* Chat.swift */,
@@ -171,7 +177,9 @@
 				B7BABE4B1CA4DD0800964D3F /* Model.xcdatamodeld in Sources */,
 				B7325A6F1C9BAC1A002BC406 /* MessageCell.swift in Sources */,
 				B7F159B81CA5C4D20003938C /* Chat.swift in Sources */,
+				B7194E2A1CA73F2B007D5F27 /* Contact.swift in Sources */,
 				B7F159BE1CA5CD120003938C /* AllChatsViewController.swift in Sources */,
+				B7194E291CA73F2B007D5F27 /* Contact+CoreDataProperties.swift in Sources */,
 				B7BABE4F1CA4DDE400964D3F /* Message.swift in Sources */,
 				B7F159B71CA5C4D20003938C /* Chat+CoreDataProperties.swift in Sources */,
 				B7325A5D1C9B66FA002BC406 /* ChatViewController.swift in Sources */,

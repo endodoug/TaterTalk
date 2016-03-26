@@ -61,7 +61,7 @@ class ChatViewController: UIViewController {
         newMessageArea.addSubview(sendButton)
         
         sendButton.setTitle("Send", forState: .Normal)
-        sendButton.addTarget(self, action: Selector("pressedSend:"), forControlEvents: .TouchUpInside)
+        sendButton.addTarget(self, action: .pressedSend, forControlEvents: .TouchUpInside)
         sendButton.setContentHuggingPriority(251, forAxis: .Horizontal)
         sendButton.setContentCompressionResistancePriority(751, forAxis: .Horizontal)
         
@@ -101,11 +101,11 @@ class ChatViewController: UIViewController {
         NSLayoutConstraint.activateConstraints(tableViewConstraints)
         
         //: listen for keyboard station to come on
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: .keyboardWillShow, name: UIKeyboardWillShowNotification, object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: .keyboardWillHide, name: UIKeyboardWillHideNotification, object: nil)
         
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: "handleSingleTap:")
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: .handleSingleTap)
         tapRecognizer.numberOfTapsRequired = 1
         view.addGestureRecognizer(tapRecognizer)
         
@@ -263,6 +263,15 @@ extension ChatViewController: UITableViewDelegate {
         return false
     }
 }
+
+private extension Selector {
+    static let pressedSend = #selector(ChatViewController.pressedSend(_:))
+    static let keyboardWillShow = #selector(ChatViewController.keyboardWillShow(_:))
+    static let keyboardWillHide = #selector(ChatViewController.keyboardWillHide(_:))
+    static let handleSingleTap = #selector(ChatViewController.handleSingleTap(_:))
+}
+
+
 
 
 
