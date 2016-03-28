@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B70DFF461CA8D06A007D94D0 /* NewChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70DFF451CA8D06A007D94D0 /* NewChatViewController.swift */; };
 		B7194E291CA73F2B007D5F27 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7194E271CA73F2B007D5F27 /* Contact+CoreDataProperties.swift */; };
 		B7194E2A1CA73F2B007D5F27 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7194E281CA73F2B007D5F27 /* Contact.swift */; };
 		B7325A5B1C9B66FA002BC406 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7325A5A1C9B66FA002BC406 /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B70DFF451CA8D06A007D94D0 /* NewChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewChatViewController.swift; sourceTree = "<group>"; };
 		B7194E271CA73F2B007D5F27 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B7194E281CA73F2B007D5F27 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		B7325A571C9B66FA002BC406 /* TaterTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaterTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +88,7 @@
 			children = (
 				B7325A5A1C9B66FA002BC406 /* AppDelegate.swift */,
 				B7F159BD1CA5CD120003938C /* AllChatsViewController.swift */,
+				B70DFF451CA8D06A007D94D0 /* NewChatViewController.swift */,
 				B7325A5C1C9B66FA002BC406 /* ChatViewController.swift */,
 				B7F159BB1CA5C7450003938C /* ChatCell.swift */,
 				B7B3A76F1C9F8B72008C6C8D /* UITableView+Scroll.swift */,
@@ -175,6 +178,7 @@
 				B7BABE481CA4DA9300964D3F /* CDHelper.swift in Sources */,
 				B7F159BC1CA5C7450003938C /* ChatCell.swift in Sources */,
 				B7BABE4B1CA4DD0800964D3F /* Model.xcdatamodeld in Sources */,
+				B70DFF461CA8D06A007D94D0 /* NewChatViewController.swift in Sources */,
 				B7325A6F1C9BAC1A002BC406 /* MessageCell.swift in Sources */,
 				B7F159B81CA5C4D20003938C /* Chat.swift in Sources */,
 				B7194E2A1CA73F2B007D5F27 /* Contact.swift in Sources */,
