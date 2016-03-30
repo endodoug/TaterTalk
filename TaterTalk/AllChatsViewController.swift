@@ -66,7 +66,12 @@ class AllChatsViewController: UIViewController {
     }
     
     func newChat() {
-        //
+        
+        let vc = NewChatViewController()
+        vc.context = context
+        let navVC = UINavigationController(rootViewController: vc)
+        presentViewController(navVC, animated: true, completion: nil)
+        
     }
     
     func fakeData() {
