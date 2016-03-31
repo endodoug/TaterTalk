@@ -28,13 +28,14 @@ class NewChatViewController: UIViewController, TableViewFetchedResultsDisplayer 
         title = "New Chat"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: .cancelButtonTapped)
         
-        automaticallyAdjustsScrollViewInsets = false
+        automaticallyAdjustsScrollViewInsets = true
         
         tableView.dataSource = self
         tableView.delegate = self
         
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         fillViewWith(tableView)
+        
         
         if let context = context {
             let request = NSFetchRequest(entityName: "Contact")
