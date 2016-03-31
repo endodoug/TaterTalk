@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B70DFF461CA8D06A007D94D0 /* NewChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70DFF451CA8D06A007D94D0 /* NewChatViewController.swift */; };
+		B70DFF481CACC3AC007D94D0 /* TableViewFetchedResultsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70DFF471CACC3AC007D94D0 /* TableViewFetchedResultsDelegate.swift */; };
 		B7194E291CA73F2B007D5F27 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7194E271CA73F2B007D5F27 /* Contact+CoreDataProperties.swift */; };
 		B7194E2A1CA73F2B007D5F27 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7194E281CA73F2B007D5F27 /* Contact.swift */; };
 		B7325A5B1C9B66FA002BC406 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7325A5A1C9B66FA002BC406 /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		B70DFF451CA8D06A007D94D0 /* NewChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewChatViewController.swift; sourceTree = "<group>"; };
+		B70DFF471CACC3AC007D94D0 /* TableViewFetchedResultsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewFetchedResultsDelegate.swift; sourceTree = "<group>"; };
 		B7194E271CA73F2B007D5F27 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B7194E281CA73F2B007D5F27 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		B7325A571C9B66FA002BC406 /* TaterTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaterTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +94,7 @@
 				B7325A5C1C9B66FA002BC406 /* ChatViewController.swift */,
 				B7F159BB1CA5C7450003938C /* ChatCell.swift */,
 				B7B3A76F1C9F8B72008C6C8D /* UITableView+Scroll.swift */,
+				B70DFF471CACC3AC007D94D0 /* TableViewFetchedResultsDelegate.swift */,
 				B7BABE471CA4DA9300964D3F /* CDHelper.swift */,
 				B7BABE491CA4DD0800964D3F /* Model.xcdatamodeld */,
 				B7325A6E1C9BAC1A002BC406 /* MessageCell.swift */,
@@ -177,6 +180,7 @@
 				B7B3A7701C9F8B72008C6C8D /* UITableView+Scroll.swift in Sources */,
 				B7BABE481CA4DA9300964D3F /* CDHelper.swift in Sources */,
 				B7F159BC1CA5C7450003938C /* ChatCell.swift in Sources */,
+				B70DFF481CACC3AC007D94D0 /* TableViewFetchedResultsDelegate.swift in Sources */,
 				B7BABE4B1CA4DD0800964D3F /* Model.xcdatamodeld in Sources */,
 				B70DFF461CA8D06A007D94D0 /* NewChatViewController.swift in Sources */,
 				B7325A6F1C9BAC1A002BC406 /* MessageCell.swift in Sources */,
