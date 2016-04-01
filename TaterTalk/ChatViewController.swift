@@ -12,6 +12,12 @@ import CoreData
 
 class ChatViewController: UIViewController {
     
+    private enum Error: ErrorType {
+        case NoChat
+        case NoContext
+    }
+
+    
     private let tableView = UITableView(frame: CGRectZero, style: .Grouped)
     
     private var sections = [NSDate: [Message]]()
@@ -21,6 +27,8 @@ class ChatViewController: UIViewController {
     private let newMessageField = UITextView()
     
     var context: NSManagedObjectContext?
+    var chat: Chat?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +39,18 @@ class ChatViewController: UIViewController {
         //allows the row height to be adjusted dynamically
         tableView.estimatedRowHeight = 44
         
+        tableView.backgroundView = UIImageView(image: UIImage (named: "MessageBubble"))
+        tableView.separatorColor = UIColor.clearColor()
+        tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        tableView.estimatedSectionHeaderHeight = 25
+        
+        
         do {
+            guard let chat = chat else { throw Error.NoChat }
+            guard let context = context else { throw Error.NoContext }
             let request = NSFetchRequest(entityName: "Message")
             request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
-            if let result = try context?.executeFetchRequest(request) as? [Message] {
+            if let result = try context.executeFetchRequest(request) as? [Message] {
                 for message in result {
                      addMessage(message)
                 }
@@ -44,6 +60,8 @@ class ChatViewController: UIViewController {
         catch {
             print("We couldn't fetch!")
         }
+        
+        automaticallyAdjustsScrollViewInsets = false
         
         // create new message area
         let newMessageArea = UIView()
@@ -91,7 +109,7 @@ class ChatViewController: UIViewController {
         
         // set up array of autolayout constraints for our tableView
         let tableViewConstraints: [NSLayoutConstraint] = [
-            tableView.topAnchor.constraintEqualToAnchor(view.topAnchor),
+            tableView.topAnchor.constraintEqualToAnchor(topLayoutGuide.bottomAnchor),
             tableView.bottomAnchor.constraintEqualToAnchor(newMessageArea.topAnchor),
             tableView.rightAnchor.constraintEqualToAnchor(view.rightAnchor),
             tableView.leftAnchor.constraintEqualToAnchor(view.leftAnchor)

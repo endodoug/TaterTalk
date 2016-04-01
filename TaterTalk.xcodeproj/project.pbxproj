@@ -12,6 +12,7 @@
 		B70DFF4A1CADDB2D007D94D0 /* UIViewController+FillWithView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70DFF491CADDB2D007D94D0 /* UIViewController+FillWithView.swift */; };
 		B7194E291CA73F2B007D5F27 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7194E271CA73F2B007D5F27 /* Contact+CoreDataProperties.swift */; };
 		B7194E2A1CA73F2B007D5F27 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7194E281CA73F2B007D5F27 /* Contact.swift */; };
+		B72F3E071CAE19D900532C7B /* ChatCreationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72F3E061CAE19D900532C7B /* ChatCreationDelegate.swift */; };
 		B7325A5B1C9B66FA002BC406 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7325A5A1C9B66FA002BC406 /* AppDelegate.swift */; };
 		B7325A5D1C9B66FA002BC406 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7325A5C1C9B66FA002BC406 /* ChatViewController.swift */; };
 		B7325A601C9B66FA002BC406 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7325A5E1C9B66FA002BC406 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		B70DFF491CADDB2D007D94D0 /* UIViewController+FillWithView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+FillWithView.swift"; sourceTree = "<group>"; };
 		B7194E271CA73F2B007D5F27 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B7194E281CA73F2B007D5F27 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		B72F3E061CAE19D900532C7B /* ChatCreationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCreationDelegate.swift; sourceTree = "<group>"; };
 		B7325A571C9B66FA002BC406 /* TaterTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaterTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7325A5A1C9B66FA002BC406 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7325A5C1C9B66FA002BC406 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				B7F159BB1CA5C7450003938C /* ChatCell.swift */,
 				B7B3A76F1C9F8B72008C6C8D /* UITableView+Scroll.swift */,
 				B70DFF491CADDB2D007D94D0 /* UIViewController+FillWithView.swift */,
+				B72F3E061CAE19D900532C7B /* ChatCreationDelegate.swift */,
 				B70DFF471CACC3AC007D94D0 /* TableViewFetchedResultsDelegate.swift */,
 				B7BABE471CA4DA9300964D3F /* CDHelper.swift */,
 				B7BABE491CA4DD0800964D3F /* Model.xcdatamodeld */,
@@ -197,6 +200,7 @@
 				B7325A5D1C9B66FA002BC406 /* ChatViewController.swift in Sources */,
 				B7F159BA1CA5C5280003938C /* Message+CoreDataProperties.swift in Sources */,
 				B7325A5B1C9B66FA002BC406 /* AppDelegate.swift in Sources */,
+				B72F3E071CAE19D900532C7B /* ChatCreationDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

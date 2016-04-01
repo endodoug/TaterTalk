@@ -20,6 +20,7 @@ class NewChatViewController: UIViewController, TableViewFetchedResultsDisplayer 
     
     private var fetchedResultsDelegate: NSFetchedResultsControllerDelegate?
     
+    var chatCreationDelegate: ChatCreationDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,6 +115,9 @@ extension NewChatViewController: UITableViewDelegate {
         guard let chat = NSEntityDescription.insertNewObjectForEntityForName("Chat", inManagedObjectContext: context) as? Chat else {return}
         
         chat.add(participant: contact)
+        
+        chatCreationDelegate?.created(chat: chat, inContext: context)
+        dismissViewControllerAnimated(false, completion: nil)
     }
     
 }
