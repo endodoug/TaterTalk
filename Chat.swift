@@ -26,4 +26,8 @@ class Chat: NSManagedObject {
         return nil
     }
 
+    func add (participant contact: Contact) {
+        mutableSetValueForKey("participants").addObject(contact)
+    }
+    
 }

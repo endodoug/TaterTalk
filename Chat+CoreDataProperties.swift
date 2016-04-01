@@ -2,7 +2,7 @@
 //  Chat+CoreDataProperties.swift
 //  TaterTalk
 //
-//  Created by doug harper on 3/25/16.
+//  Created by doug harper on 3/31/16.
 //  Copyright © 2016 Doug Harper. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -16,5 +16,6 @@ extension Chat {
 
     @NSManaged var lastMessageTime: NSDate?
     @NSManaged var messages: NSSet?
+    @NSManaged var participants: NSSet?
 
 }
